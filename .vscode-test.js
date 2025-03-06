@@ -4,7 +4,7 @@ const { defineConfig } = require('@vscode/test-cli');
 
 const pkg = require('./package.json');
 
-const minimumVscodeVersion = pkg.engines.vscode.match(/^[=><]([0-9.]+)$/)?.[1];
+const minimumVscodeVersion = pkg.engines.vscode.match(/^>=(.+)$/)?.[1];
 
 if (!minimumVscodeVersion) throw new Error(`"engines.vscode" is unexpected: ${pkg.engines.vscode}`);
 
